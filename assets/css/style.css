@@ -7,10 +7,11 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsla(240, 4%, 13%, 0.255);
+  --first-color: hsl(240, 4%, 13%);
   --first-color-alt: hsla(240, 1%, 22%, 0);
-  --title-color: hsl(270, 61%, 23%);
-  --text-color: hsl(0, 0%, 100%);
+  --title-color: hsl(249, 100%, 69%);
+  --text-color: hsl(0, 0%, 97%);
+  --white-color: hsl(0, 0%, 100%);
   --text-color-light: hsl(0, 0%, 53%);
   --shadow-img: drop-shadow(0 8px 12px hsla(0, 0%, 0%, 0.2));
   --filter-img: invert(1);
@@ -69,7 +70,6 @@ button {
 body {
   background-color: var(--first-color);
   color: var(--text-color);
-  transition: background-color 0.4s;
 }
 
 input,
@@ -118,7 +118,6 @@ img {
 
 .section__title {
   font-size: var(--big-font-size);
-  font-family: var(--second-font);
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -128,8 +127,84 @@ img {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  transition: background-color 0.3s;
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--white-color);
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+  transition: color 0.4s;
+}
+.nav__logo img {
+  width: 50px;
+  transition: 0.4s;
+}
+
+.nav__logo:hover {
+  color: var(--title-color);
+}
+
+.nav__logo:hover img {
+  transform: translateY(-0.3rem);
+}
+
+.nav__toggle,
+.nav__close {
+  display: flex;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
 
 /* Navigation for mobile devices */
+@media screen and (max-width: 780px) {
+  .nav__menu {
+    position: fixed;
+    width: 100%;
+    top: -100%;
+    left: 0;
+    background-color: hsla(240, 4%, 13%, 0.502);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding-block: 4rem 3.5rem;
+    transition: top 0.4s;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 1.5rem;
+}
+
+.nav__link {
+  color: var(--white-color);
+  font-weight: var(--font-regular);
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
 
 /* Show menu */
 
