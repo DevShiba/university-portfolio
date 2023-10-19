@@ -8,7 +8,7 @@
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --first-color: hsl(240, 4%, 13%);
-  --first-color-alt: hsla(240, 1%, 22%, 0);
+  --first-color-alt: hsla(240, 1%, 22%);
   --title-color: hsl(249, 100%, 69%);
   --text-color: hsl(0, 0%, 97%);
   --white-color: hsl(0, 0%, 100%);
@@ -19,6 +19,7 @@
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "M PLUS Rounded 1c", sans-serif;
+  --second-font: ;
   --biggest-font-size: 3rem;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
@@ -113,13 +114,17 @@ img {
 }
 
 .section {
-  padding-block: 5rem 1rem;
+  padding-block: 1.5rem 1rem;
 }
 
 .section__title {
-  font-size: var(--big-font-size);
-  text-align: center;
+  font-size: var(--h1-font-size);
+  text-align: initial;
   margin-bottom: 1rem;
+  padding-bottom: 3px;
+  border-bottom: 3px solid var(--first-color-alt);
+  color: var(--text-color);
+  display: inline-block;
 }
 
 .main {
@@ -213,5 +218,105 @@ img {
 /* Active link */
 
 /*=============== HOME ===============*/
+.home__container {
+  place-content: center;
+}
+
+.home__image {
+  width: 400px;
+}
+
+.home__data {
+  display: flex;
+  flex-direction: column;
+  text-align: initial;
+}
+
+.home__title {
+  font-size: var(--big-font-size);
+  font-weight: var(--font-bold);
+  color: var(--text-color);
+  margin-block: 0.5rem;
+}
+
+.home__subtitle {
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+}
+
+.home__icon {
+  border-radius: 50%;
+  width: 100px;
+  border: 2px solid var(--white-color);
+  align-self: center;
+  margin-block: 1rem;
+}
 
 /*=============== BUTTON ===============*/
+.button {
+  display: inline-flex;
+  cursor: pointer;
+  text-transform: capitalize;
+  padding: 0.6rem 2rem;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-bold);
+  background-color: var(--first-color-alt);
+  color: var(--white-color);
+  border-radius: 5px;
+  border: none;
+  justify-self: center;
+}
+
+/*=============== ABOUT ===============*/
+.about__data{
+  display: grid;
+}
+
+.about__description {
+  font-size: var(--normal-font-size);
+  text-indent: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+/*=============== SOCIALS ===============*/
+.socials__data {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3rem;
+}
+
+.socials__icon {
+  color: var(--white-color);
+  font-size: var(--h3-font-size);
+}
+
+/*=============== PORTFOLIO ===============*/
+
+.portfolio__container{
+  justify-content: center;
+}
+
+.portfolio__content {
+  margin-block: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  align-content: center;
+}
+
+.project__title {
+  text-align: center;
+  color: var(--text-color);
+  font-size: var(--h2-font-size);
+  margin-top: 1rem;
+}
+
+
+/*=============== FOOTER ===============*/
+.footer__copy{
+  font-size: var(--normal-font-size);
+  color: var(--text-color-light);
+  text-align: center;
+  margin-block: 2rem;
+}
