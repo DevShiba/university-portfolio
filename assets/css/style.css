@@ -1,5 +1,5 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Open+Sans&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -18,8 +18,8 @@
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: "M PLUS Rounded 1c", sans-serif;
-  --second-font: ;
+  --first-font: "M PLUS Rounded 1c", sans-serif;
+  --second-font: "Open Sans", sans-serif;
   --biggest-font-size: 3rem;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
@@ -52,19 +52,21 @@
 
 /*=============== BASE ===============*/
 * {
+  /*Usando seletor universal para resetar o espaçamento*/
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
 html {
+  /*Permite que a rolagem da página ocorra de forma suave e animada,*/
   scroll-behavior: smooth;
 }
 
 body,
 input,
 button {
-  font-family: var(--body-font);
+  font-family: var(--second-font);
   font-size: var(--normal-font-size);
 }
 
@@ -84,6 +86,7 @@ h2,
 h3,
 h4 {
   color: var(--title-color);
+  font-family: var(--first-font);
   font-weight: var(--font-bold);
   line-height: 100%;
 }
@@ -97,6 +100,7 @@ a {
 }
 
 img {
+  /*Estilização para manter as imagens responsivas*/
   display: block;
   max-width: 100%;
   height: auto;
@@ -104,20 +108,24 @@ img {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
+  /* Define um contêiner com largura máxima e margens laterais */
   max-width: 760px;
   margin-inline: 1.5rem;
 }
 
 .grid {
+  /* Define um layout de grade com espaço entre elementos */
   display: grid;
   gap: 1.5rem;
 }
 
 .section {
+  /* Define estilos para seções da página com preenchimento e margem superior e inferior */
   padding-block: 1.5rem 1rem;
 }
 
 .section__title {
+  /* Define estilos para títulos de seção com borda inferior */
   font-size: var(--h1-font-size);
   text-align: initial;
   margin-bottom: 1rem;
@@ -128,11 +136,12 @@ img {
 }
 
 .main {
-  overflow: hidden; /* For animation ScrollReveal */
+  overflow: hidden; /* Para animações com ScrollReveal */
 }
 
 /*=============== HEADER & NAV ===============*/
 .header {
+  /* Estilos para o cabeçalho, posição fixa e transições de fundo */
   position: fixed;
   width: 100%;
   top: 0;
@@ -143,6 +152,7 @@ img {
 }
 
 .nav {
+  /* Estilos para a barra de navegação, alinhamento de itens */
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
@@ -150,8 +160,10 @@ img {
 }
 
 .nav__logo {
+  /* Estilos para o logotipo na barra de navegação */
   color: var(--white-color);
   font-size: var(--h2-font-size);
+  font-family: var(--first-font);
   font-weight: var(--font-bold);
   display: flex;
   align-items: center;
@@ -168,6 +180,7 @@ img {
 }
 
 .nav__logo:hover img {
+  /*Adicionando uma pequena animação ao passar o mouse em cima*/
   transform: translateY(-0.3rem);
 }
 
@@ -178,7 +191,7 @@ img {
   cursor: pointer;
 }
 
-/* Navigation for mobile devices */
+/* Menu para dispositivos mobile */
 @media screen and (max-width: 780px) {
   .nav__menu {
     position: fixed;
@@ -186,10 +199,12 @@ img {
     top: -100%;
     left: 0;
     background-color: hsla(240, 4%, 13%, 0.502);
-    -webkit-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(
+      10px
+    ); /*. Para garantir a compatibilidade com outros navegadores,*/
     backdrop-filter: blur(10px);
     padding-block: 4rem 3.5rem;
-    transition: top 0.4s;
+    transition: top 0.7s;
   }
 }
 
@@ -211,11 +226,16 @@ img {
   right: 1.5rem;
 }
 
-/* Show menu */
+/* Adiciona Menu */
+.show-menu {
+  top: 0;
+}
 
-/* Add shadow header */
-
-/* Active link */
+/* Adiciona Background e Box Shadow */
+.scroll-header {
+  background-color: var(--first-color);
+  box-shadow: 0px 13px 12px -3px rgba(0, 0, 0, 0.1);
+}
 
 /*=============== HOME ===============*/
 .home__container {
@@ -268,7 +288,7 @@ img {
 }
 
 /*=============== ABOUT ===============*/
-.about__data{
+.about__data {
   display: grid;
 }
 
@@ -277,7 +297,6 @@ img {
   text-indent: 1rem;
   margin-bottom: 1rem;
 }
-
 
 /*=============== SOCIALS ===============*/
 .socials__data {
@@ -293,12 +312,12 @@ img {
 
 /*=============== PORTFOLIO ===============*/
 
-.portfolio__container{
+.portfolio__container {
   justify-content: center;
 }
 
 .portfolio__content {
-  margin-block: 2.5rem;
+  margin-block: 1rem;
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
@@ -312,9 +331,26 @@ img {
   margin-top: 1rem;
 }
 
+/*=============== EDUCATION ===============*/
+.education__data {
+  justify-content: center;
+}
+.education__text {
+  padding-left: 4rem;
+  text-indent: -3.4rem;
+}
+
+.education__text span {
+  margin-right: 1rem;
+  font-weight: var(--font-bold);
+}
+
+.education__image {
+  justify-content: center;
+}
 
 /*=============== FOOTER ===============*/
-.footer__copy{
+.footer__copy {
   font-size: var(--normal-font-size);
   color: var(--text-color-light);
   text-align: center;
