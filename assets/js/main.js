@@ -21,9 +21,17 @@ if (navClose) {
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 const scrollHeader = () => {
   const header = document.getElementById("header");
-  // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
-  this.scrollY >= 50
-    ? header.classList.add("scroll-header")
-    : header.classList.remove("scroll-header");
+
+  // Verifica se o valor do scroll vertical (this.scrollY) é maior ou igual a 50 pixels
+  if (this.scrollY >= 50) {
+    // Se o scroll for maior ou igual a 50 pixels, adiciona a classe "scroll-header" ao elemento do cabeçalho
+    header.classList.add("scroll-header");
+  } else {
+    // Se o scroll for menor que 50 pixels, remove a classe "scroll-header" do elemento do cabeçalho
+    header.classList.remove("scroll-header");
+  }
 };
+
+//Chama a função scrollHeader quando o evento "scroll" ocorre
 window.addEventListener("scroll", scrollHeader);
+

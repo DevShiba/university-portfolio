@@ -20,13 +20,12 @@
   /*.5rem = 8px | 1rem = 16px ...*/
   --first-font: "M PLUS Rounded 1c", sans-serif;
   --second-font: "Open Sans", sans-serif;
-  --biggest-font-size: 3rem;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1rem;
-  --normal-font-size: 0.938rem;
-  --small-font-size: 0.813rem;
+  --h2-font-size: 1rem;
+  --h3-font-size: 0.9rem;
+  --normal-font-size: 0.9rem;
+  --small-font-size: 0.875rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -38,15 +37,14 @@
 }
 
 /*========== Responsive typography ==========*/
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 580px) {
   :root {
-    --biggest-font-size: 3.2rem;
-    --big-font-size: 2.5rem;
-    --h1-font-size: 2rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
+    --big-font-size: 2.2rem;
+    --h1-font-size: 1.7rem;
+    --h2-font-size: 1.3rem;
+    --h3-font-size: 1.1rem;
     --normal-font-size: 1rem;
-    --small-font-size: 0.875rem;
+    --small-font-size: 0.9rem;
   }
 }
 
@@ -109,7 +107,7 @@ img {
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   /* Define um contêiner com largura máxima e margens laterais */
-  max-width: 760px;
+  max-width: 490px;
   margin-inline: 1.5rem;
 }
 
@@ -157,6 +155,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 580px;
 }
 
 .nav__logo {
@@ -192,7 +191,7 @@ img {
 }
 
 /* Menu para dispositivos mobile */
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 580px) {
   .nav__menu {
     position: fixed;
     width: 100%;
@@ -332,9 +331,6 @@ img {
 }
 
 /*=============== EDUCATION ===============*/
-.education__data {
-  justify-content: center;
-}
 .education__text {
   padding-left: 4rem;
   text-indent: -3.4rem;
@@ -349,10 +345,161 @@ img {
   justify-content: center;
 }
 
+/*=============== CONTACT ===============*/
+.contact__container {
+  position: relative;
+}
+
+/* Estilização para a seção de e-mail, definindo espaçamento, margem e transição */
+.contact__mail {
+  position: relative;
+  padding: 5rem 1.5rem 2.5rem;
+  margin-top: 2rem;
+  transition: background-color 0.4s;
+}
+
+.contact__title {
+  color: var(--white-color);
+  font-size: var(--h2-font-size);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Configuração do layout em grade para o formulário de contato */
+.contact__form,
+.contact__group {
+  display: grid;
+  row-gap: 1.25rem;
+}
+
+.contact__form {
+  position: relative;
+}
+
+/* Estilização de um elemento de caixa */
+.contact__box {
+  position: relative;
+  width: 100%;
+  height: 58px;
+}
+
+/* Estilização comum para campos de input e botões */
+.contact__input,
+.contact__button {
+  font-size: var(--normal-font-size);
+  outline: none;
+  border: none;
+}
+
+/* Estilização para o campo de input de texto */
+.contact__input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--first-color);
+  border: 3px solid var(--first-color-alt);
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  font-weight: var(--font-regular);
+  transition: border 0.4s, background-color 0.4s;
+}
+
+/* Estilização do placeholder do campo de input */
+.contact__input::placeholder {
+  color: var(--text-color-light);
+  transition: opacity 0.4s;
+}
+
+/* Estilização quando o campo de input está em foco */
+.contact__input:focus {
+  border: 3px solid var(--white-color);
+}
+
+/* Estilização para o preenchimento automático no Safari */
+.contact__input:-webkit-autofill {
+  transition: background-color 6000s, color 6000s;
+}
+
+/* Estilização para o rótulo do campo de input */
+.contact__label {
+  position: absolute;
+  top: 16px;
+  left: 10px;
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-bold);
+  background-color: var(--first-color);
+  padding: 8px;
+  pointer-events: none;
+  transition: top 0.4s, opacity 0.4s, background-color 0.4s;
+  opacity: 0;
+}
+
+.contact__form .contact__area {
+  height: 10rem;
+}
+
+/* Estilização para a área de texto no campo de input de texto */
+.contact__area textarea {
+  resize: none;
+  padding-top: 1rem;
+}
+
+.contact__button {
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+/* Estilização para o placeholder do campo de input quando está em foco */
+.contact__input:focus::placeholder {
+  opacity: 0;
+}
+
+/* Estilização para mostrar o rótulo quando o campo de input está em foco ou preenchido */
+.contact__input:focus + .contact__label,
+.contact__input:not(:placeholder-shown):not(:focus) + .contact__label {
+  opacity: 1;
+  top: -16px;
+}
 /*=============== FOOTER ===============*/
 .footer__copy {
   font-size: var(--normal-font-size);
   color: var(--text-color-light);
   text-align: center;
   margin-block: 2rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media screen and (min-width: 490px) {
+  .home__data {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 1.5rem;
+  }
+
+  .portfolio__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 580px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1rem);
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 2rem;
+    z-index: 2;
+  }
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
 }

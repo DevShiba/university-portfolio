@@ -58,7 +58,68 @@
       </nav>
     </header>
     <main>
-      
+            <!--==================== CONTACT ====================-->
+      <section class="contact section" id="contact">
+        <div class="contact__container container" style="margin-top: 5rem">
+          <div class="contact__mail">
+            <h2 class="contact__title">Entre Em Contato</h2>
+
+            <form action="#" class="contact__form" id="contact-form">
+              <div class="contact__group">
+                <div class="contact__box">
+                  <input
+                    type="text"
+                    name="user_name"
+                    class="contact__input"
+                    id="name"
+                    required
+                    placeholder="Nome"
+                  />
+                  <label for="name" class="contact__label">Nome</label>
+                </div>
+                <div class="contact__box">
+                  <input
+                    type="text"
+                    name="user_email"
+                    class="contact__input"
+                    id="email"
+                    required
+                    placeholder="Email"
+                  />
+                  <label for="email" class="contact__label">Email</label>
+                </div>
+              </div>
+
+              <div class="contact__box">
+                <input
+                  type="text"
+                  name="user_subject"
+                  class="contact__input"
+                  id="subject"
+                  required
+                  placeholder="Assunto"
+                />
+                <label for="subject" class="contact__label">Assunto</label>
+              </div>
+
+              <div class="contact__box contact__area">
+                <textarea
+                  name="user_message"
+                  class="contact__input"
+                  id="message"
+                  required
+                  placeholder="Menssagem"
+                ></textarea>
+                <label for="message" class="contact__label">Menssagem</label>
+              </div>
+
+              <button class="contact__button button" type="submit">
+                Enviar
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!--=============== JAVASCRIPT ===============-->
